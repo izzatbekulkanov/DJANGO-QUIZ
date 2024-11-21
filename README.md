@@ -55,7 +55,7 @@ Talablar:
 ### 1. Ushbu repozitoriyani klonlang
 
 ```bash
-git clone https://github.com/izzatbekulkanov/lets-quiz.git
+git clone https://github.com/izzatbekulkanov/DJANGO-QUIZ.git
 cd lets_quiz
 ```
 ## `lets_quiz` katalogida quyidagi buyruqni ishga tushiring
