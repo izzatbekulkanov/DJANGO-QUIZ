@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
+from django.views.generic import TemplateView
+
 from .models import QuizProfile, Question, AttemptedQuestion
 from .forms import UserLoginForm, RegistrationForm
 
@@ -102,11 +104,10 @@ def logout_view(request):
     return redirect('/')
 
 
-def error_404(request):
-    data = {}
-    return render(request, 'quiz/error_404.html', data)
+class SystemView(TemplateView):
+    """Xato sahifalari uchun umumiy view"""
+    http_status = 200  # Standart status kodi
 
-
-def error_500(request):
-    data = {}
-    return render(request, 'quiz/error_500.html', data)
+    def render_to_response(self, context, **response_kwargs):
+        response_kwargs['status'] = self.http_status
+        return super().render_to_response(context, **response_kwargs)

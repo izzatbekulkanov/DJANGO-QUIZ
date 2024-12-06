@@ -6,6 +6,7 @@ from model_utils.models import TimeStampedModel
 
 
 class Question(TimeStampedModel):
+    id = models.BigAutoField(primary_key=True)  # Birlamchi kalitni qo'shish
     ALLOWED_NUMBER_OF_CORRECT_CHOICES = 1
 
     html = models.TextField(_('Question Text'))
@@ -17,6 +18,7 @@ class Question(TimeStampedModel):
 
 
 class Choice(TimeStampedModel):
+    id = models.BigAutoField(primary_key=True)  # Birlamchi kalitni qo'shish
     MAX_CHOICES_COUNT = 4
 
     question = models.ForeignKey(Question, related_name='choices', on_delete=models.CASCADE)
@@ -28,6 +30,7 @@ class Choice(TimeStampedModel):
 
 
 class QuizProfile(TimeStampedModel):
+    id = models.BigAutoField(primary_key=True)  # Birlamchi kalitni qo'shish
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     total_score = models.DecimalField(_('Total Score'), default=0, decimal_places=2, max_digits=10)
 
@@ -65,6 +68,7 @@ class QuizProfile(TimeStampedModel):
 
 
 class AttemptedQuestion(TimeStampedModel):
+    id = models.BigAutoField(primary_key=True)  # Birlamchi kalitni qo'shish
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     quiz_profile = models.ForeignKey(QuizProfile, on_delete=models.CASCADE, related_name='attempts')
     selected_choice = models.ForeignKey(Choice, on_delete=models.CASCADE, null=True)

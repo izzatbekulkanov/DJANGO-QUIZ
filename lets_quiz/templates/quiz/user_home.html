@@ -1,33 +1,34 @@
 {% extends 'base.html' %}
-{% block title %} Let's Quiz | Welcome {% endblock title %}
+
+{% block title %} Let's Quiz | Xush kelibsiz {% endblock title %}
+
 {% block content %}
 <div class="container my-4">
     <div class="jumbotron">
 
-	      <h2 class="text-center text-info">Congratulations!! You have successfully logged in.</h2>
-	      <h3 class="text-info text-center">Before you play the quiz, here are the rules</h3>
+	      <h2 class="text-center text-info">Tabriklaymiz!! Siz muvaffaqiyatli tarzda tizimga kirdingiz.</h2>
+	      <h3 class="text-info text-center">Quizni boshlashdan oldin, quyidagi qoidalarni o'qib chiqing</h3>
 
         <div class="row">
 
             <div class="card border-info mx-4 my-4">
                 <div class="card-body text-info">
-                    <h4 class="card-title">Rules :</h4>
+                    <h4 class="card-title">Qoidalar :</h4>
                     <p class="card-text">
                         <ul style="list-style:decimal;">
-                            <li>All questions are multiple choice question.</li>
-                            <li><span class="text-danger">Only one choice is correct.</span></li>
-                            <li>Every question carry equal marks i.e. <span class="text-danger">4 marks for each question.</span>
-                            </li>
-                            <li>Every question is displayed only once per user.</li>
-                            <li>Try to answer as quickly as you can.</li>
-                            <li>If you press refresh or go back to the previous page, there will be a new question for you and the question you were on will be counted as attempted.</li>
-                            <li>Questions are displayed randomly for every user.</li>
-                            <li>You will be told immediately whether your answer was correct or incorrect once you submit the answer.</li>
+                            <li>Barcha savollar test shaklida bo'ladi.</li>
+                            <li><span class="text-danger">Faqat bitta to'g'ri javob bor.</span></li>
+                            <li>Har bir savol teng baho oladi, ya'ni <span class="text-danger">har bir savol uchun 4 ball.</span></li>
+                            <li>Har bir savol faqat bir marta ko'rsatiladi.</li>
+                            <li>Iltimos, tezda javob berishga harakat qiling.</li>
+                            <li>Agar siz sahifani yangilasangiz yoki orqaga qaytsangiz, yangi savol beriladi va o'zingizni oldingi savolni javob berdim deb hisoblang.</li>
+                            <li>Savollar har bir foydalanuvchi uchun tasodifiy ko'rsatiladi.</li>
+                            <li>Javobni yuborganingizdan so'ng, darhol javobingiz to'g'ri yoki noto'g'ri ekanligi bildiriladi.</li>
                         </ul>
                     </p>
-                    <a href="{% url 'quiz:play' %}" class="btn btn-info">Let's play</a>
+                    <a href="{% url 'quiz:play' %}" class="btn btn-info">Keling, o'ynaylik</a>
                 </div>  
-                <div class="card-footer">Rules last modified 08-March-2018</div>  
+                <div class="card-footer">Qoidalar 08-mart 2018 yilda oxirgi marta yangilandi</div>  
             </div>  
         </div>  
 
